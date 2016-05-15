@@ -1032,7 +1032,7 @@
 					<key>EdgeSwipeTop</key>
 					<integer>10</integer>
 					<key>EdgeSwipes</key>
-					<false/>
+					<true/>
 					<key>EdgeSwipes2Ways</key>
 					<false/>
 					<key>EdgeSwipesResetPointer</key>
