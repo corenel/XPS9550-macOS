@@ -5,7 +5,7 @@
  * 
  * Disassembling to non-symbolic legacy ASL operators
  *
- * Disassembly of SSDT-16.aml, Fri May 13 21:17:11 2016
+ * Disassembly of SSDT-16.aml, Sat May 28 15:53:27 2016
  *
  * Original Table Header:
  *     Signature        "SSDT"
@@ -35,12 +35,12 @@ DefinitionBlock ("", "SSDT", 2, "DptfTa", "DptfTabl", 0x00001000)
     External (_PR_.CLVL, FieldUnitObj)
     External (_PR_.CPPC, FieldUnitObj)
     External (_PR_.CPU0, ProcessorObj)
-    External (_PR_.CPU0._PSS, MethodObj)    // 0 Arguments
+    External (_PR_.CPU0._PSS, IntObj)    // Warning: Unknown object
     External (_PR_.CPU0._TPC, IntObj)    // Warning: Unknown object
     External (_PR_.CPU0._TSD, IntObj)    // Warning: Unknown object
     External (_PR_.CPU0._TSS, IntObj)    // Warning: Unknown object
-    External (_PR_.CPU0.LPSS, PkgObj)
-    External (_PR_.CPU0.TPSS, PkgObj)
+    External (_PR_.CPU0.LPSS, UnknownObj)    // Warning: Unknown object
+    External (_PR_.CPU0.TPSS, UnknownObj)    // Warning: Unknown object
     External (_PR_.CPU0.TSMC, UnknownObj)    // Warning: Unknown object
     External (_PR_.CPU0.TSMF, UnknownObj)    // Warning: Unknown object
     External (_PR_.CPU1, ProcessorObj)
@@ -1296,7 +1296,7 @@ DefinitionBlock ("", "SSDT", 2, "DptfTa", "DptfTabl", 0x00001000)
         {
             If (CondRefOf (\_PR.CPU0._PSS))
             {
-                Return (\_PR.CPU0._PSS ())
+                Return (\_PR.CPU0._PSS)
             }
             Else
             {

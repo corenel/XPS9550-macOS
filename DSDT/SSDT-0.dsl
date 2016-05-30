@@ -5,7 +5,7 @@
  * 
  * Disassembling to non-symbolic legacy ASL operators
  *
- * Disassembly of SSDT-0.aml, Fri May 13 21:17:10 2016
+ * Disassembly of SSDT-0.aml, Sat May 28 15:53:27 2016
  *
  * Original Table Header:
  *     Signature        "SSDT"

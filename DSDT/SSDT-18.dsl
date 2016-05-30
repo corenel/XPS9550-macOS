@@ -5,7 +5,7 @@
  * 
  * Disassembling to non-symbolic legacy ASL operators
  *
- * Disassembly of SSDT-18.aml, Fri May 13 21:17:11 2016
+ * Disassembly of SSDT-18.aml, Sat May 28 15:53:27 2016
  *
  * Original Table Header:
  *     Signature        "SSDT"
@@ -29,7 +29,7 @@ DefinitionBlock ("", "SSDT", 1, "OptRef", "OptTabl", 0x00001000)
     External (_GPE.VHOV, MethodObj)    // Imported: 3 Arguments
     External (_PR_.CPPC, FieldUnitObj)
     External (_PR_.CPU0, ProcessorObj)
-    External (_PR_.CPU0._PSS, MethodObj)    // 0 Arguments
+    External (_PR_.CPU0._PSS, IntObj)    // Warning: Unknown object
     External (_PR_.CPU0._PTC, UnknownObj)    // Warning: Unknown object
     External (_PR_.CPU0._TSS, IntObj)    // Warning: Unknown object
     External (_SB_.GGIV, MethodObj)    // 1 Arguments
@@ -200,6 +200,8 @@ DefinitionBlock ("", "SSDT", 1, "OptRef", "OptTabl", 0x00001000)
             Store (TMPB, ROM2)
             Return (ROM2)
         }
+
+        
 
         
 
@@ -778,7 +780,7 @@ DefinitionBlock ("", "SSDT", 1, "OptRef", "OptTabl", 0x00001000)
                 }
                 ElseIf (LEqual (_T_0, 0x21))
                 {
-                    Return (\_PR.CPU0._PSS ())
+                    Return (\_PR.CPU0._PSS)
                 }
                 ElseIf (LEqual (_T_0, 0x22))
                 {

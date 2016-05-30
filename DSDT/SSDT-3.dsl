@@ -5,7 +5,7 @@
  * 
  * Disassembling to non-symbolic legacy ASL operators
  *
- * Disassembly of SSDT-3.aml, Fri May 13 21:17:11 2016
+ * Disassembly of SSDT-3.aml, Sat May 28 15:53:27 2016
  *
  * Original Table Header:
  *     Signature        "SSDT"
@@ -34,4 +34,4 @@ DefinitionBlock ("", "SSDT", 2, "INTEL ", "OEM_RTD3", 0x00001000)
     External (_SB_.PCI0.SAT0.SDSM, MethodObj)    // Imported: 4 Arguments
     External (_SB_.PCI0.SAT1.SDSM, MethodObj)    // Imported: 4 Arguments
     External (MDBG, MethodObj)    // Imported: 1 Arguments
-}
+

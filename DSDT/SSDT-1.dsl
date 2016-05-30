@@ -5,7 +5,7 @@
  * 
  * Disassembling to non-symbolic legacy ASL operators
  *
- * Disassembly of SSDT-1.aml, Fri May 13 21:17:10 2016
+ * Disassembly of SSDT-1.aml, Sat May 28 15:53:27 2016
  *
  * Original Table Header:
  *     Signature        "SSDT"
@@ -57,7 +57,99 @@ DefinitionBlock ("", "SSDT", 2, "INTEL ", "sensrhub", 0x00000000)
                 Return (Zero)
             }
 
-            
+            Method (XDSM, 4, Serialized)  // _DSM: Device-Specific Method
+            {
+                Name (_T_0, Zero)  // _T_x: Emitted by ASL Compiler
+                Name (PGCE, Zero)
+                Name (PGCD, Zero)
+                Name (PGCG, 0x2E)
+                Name (DFUE, Zero)
+                Name (DFUD, Zero)
+                Name (OLDV, Zero)
+                Name (PGCV, Zero)
+                Name (DFUV, Zero)
+                If (LEqual (Arg0, ToUUID ("03c868d5-563f-42a8-9f57-9a18d949b7cb")))
+                {
+                    If (LEqual (BID, 0x20))
+                    {
+                        Store (0x3A, PGCG)
+                    }
+
+                    If (LEqual (One, ToInteger (Arg1)))
+                    {
+                        While (One)
+                        {
+                            Store (ToInteger (Arg2), _T_0)
+                            If (LEqual (_T_0, Zero))
+                            {
+                                Return (Buffer (One)
+                                {
+                                     0x0F                                           
+                                })
+                            }
+                            ElseIf (LEqual (_T_0, One))
+                            {
+                                Store (DerefOf (Index (Arg3, Zero)), PGCE)
+                                Store (DerefOf (Index (Arg3, One)), PGCD)
+                                Store (\_SB.GGOV (0x02010016), OLDV)
+                                \_SB.SGOV (0x02010016, PGCE)
+                                If (LGreater (PGCD, Zero))
+                                {
+                                    Sleep (PGCD)
+                                    \_SB.GGOV (0x02010016)
+                                    OLDV
+                                }
+
+                                If (LEqual (\_SB.GGOV (0x02010016), One))
+                                {
+                                    Sleep (0x96)
+                                    If (LEqual (\_SB.GGOV (0x02010014), One)) {}
+                                    Else
+                                    {
+                                        Notify (\_SB.PCI0.I2C0.DFUD, One)
+                                    }
+                                }
+
+                                Return (Zero)
+                            }
+                            ElseIf (LEqual (_T_0, 0x02))
+                            {
+                                Store (DerefOf (Index (Arg3, Zero)), DFUE)
+                                Store (DerefOf (Index (Arg3, One)), DFUD)
+                                Store (\_SB.GGOV (0x02010014), OLDV)
+                                \_SB.GGOV (0x02010014)
+                                DFUE
+                                If (LGreater (DFUD, Zero))
+                                {
+                                    Sleep (DFUD)
+                                    \_SB.GGOV (0x02010014)
+                                    OLDV
+                                }
+
+                                Return (Zero)
+                            }
+                            ElseIf (LEqual (_T_0, 0x03))
+                            {
+                                Store (\_SB.GGOV (0x02010014), DFUV)
+                                Store (\_SB.GGOV (0x02010016), PGCV)
+                                Return (Package (0x02)
+                                {
+                                    PGCV, 
+                                    DFUV
+                                })
+                            }
+
+                            Break
+                        }
+
+                        Return (Zero)
+                    }
+
+                    Return (Zero)
+                }
+
+                Return (Zero)
+            }
         }
     }
 }

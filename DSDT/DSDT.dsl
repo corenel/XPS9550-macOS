@@ -5,13 +5,13 @@
  * 
  * Disassembling to non-symbolic legacy ASL operators
  *
- * Disassembly of DSDT.aml, Fri May 13 21:17:10 2016
+ * Disassembly of DSDT.aml, Sat May 28 15:53:26 2016
  *
  * Original Table Header:
  *     Signature        "DSDT"
  *     Length           0x0002059B (132507)
  *     Revision         0x02
- *     Checksum         0x31
+ *     Checksum         0xCC
  *     OEM ID           "DELL  "
  *     OEM Table ID     "CBX3   "
  *     OEM Revision     0x01072009 (17244169)
@@ -21,8 +21,8 @@
 DefinitionBlock ("", "DSDT", 2, "DELL  ", "CBX3   ", 0x01072009)
 {
     /*
-     * iASL Warning: There were 33 external control methods found during
-     * disassembly, but only 25 were resolved (8 unresolved). Additional
+     * iASL Warning: There were 31 external control methods found during
+     * disassembly, but only 22 were resolved (9 unresolved). Additional
      * ACPI tables may be required to properly disassemble the code. This
      * resulting disassembler output file may not compile because the
      * disassembler did not know how many arguments to assign to the
@@ -45,7 +45,6 @@ DefinitionBlock ("", "DSDT", 2, "DELL  ", "CBX3   ", 0x01072009)
      * a reference file -- refs.txt
      */
 
-    External (_GPE.HLVT, MethodObj)    // 0 Arguments
     External (_GPE.MMTB, MethodObj)    // Imported: 0 Arguments
     External (_GPE.P0L6, MethodObj)    // 0 Arguments
     External (_GPE.P1L6, MethodObj)    // 0 Arguments
@@ -55,10 +54,8 @@ DefinitionBlock ("", "DSDT", 2, "DELL  ", "CBX3   ", 0x01072009)
     External (_PR_.BGMA, FieldUnitObj)
     External (_PR_.BGMS, FieldUnitObj)
     External (_PR_.CPPC, FieldUnitObj)
-    External (_PR_.CPU0._PPC, MethodObj)    // 0 Arguments
-    External (_PR_.CPU0._PSS, MethodObj)    // 0 Arguments
-    External (_PR_.CPU0.LPSS, PkgObj)
-    External (_PR_.CPU0.TPSS, PkgObj)
+    External (_PR_.CPU0.LPSS, UnknownObj)    // Warning: Unknown object
+    External (_PR_.CPU0.TPSS, UnknownObj)    // Warning: Unknown object
     External (_PR_.DSAE, FieldUnitObj)
     External (_PR_.DTSE, FieldUnitObj)
     External (_PR_.DTSF, FieldUnitObj)
@@ -96,10 +93,10 @@ DefinitionBlock ("", "DSDT", 2, "DELL  ", "CBX3   ", 0x01072009)
     External (_SB_.PCI0.PEG0.PEGP.SGPO, MethodObj)    // Imported: 2 Arguments
     External (_SB_.PCI0.PEG1.HPME, MethodObj)    // 0 Arguments
     External (_SB_.PCI0.PEG2.HPME, MethodObj)    // 0 Arguments
-    External (_SB_.PCI0.PEG0.PEGP._PS3, MethodObj)
-    External (_SB_.PCI0.PEG0.PEGP._PS0, MethodObj)
-    External (_SB_.PCI0.PEG0.PEGP._OFF, MethodObj)
-    External (_SB_.PCI0.PEG0.PEGP._ON, MethodObj)
+    External(_SB_.PCI0.PEG0.PEGP._PS3, MethodObj)
+    External (_SB_.PCI0.PEG0.PEGP._PS0,MethodObj)
+    External(_SB_.PCI0.PEG0.PEGP._OFF, MethodObj)
+    External(_SB_.PCI0.PEG0.PEGP._ON, MethodObj)
     External (_SB_.PCI0.SAT0.SDSM, MethodObj)    // Imported: 4 Arguments
     External (_SB_.PCI0.SAT0.TFGF, IntObj)
     External (_SB_.PCI0.SAT1.SDSM, MethodObj)    // Imported: 4 Arguments
@@ -115,6 +112,7 @@ DefinitionBlock ("", "DSDT", 2, "DELL  ", "CBX3   ", 0x01072009)
     External (D1F1, UnknownObj)    // Warning: Unknown object
     External (D1F2, UnknownObj)    // Warning: Unknown object
     External (GSMI, FieldUnitObj)
+    External (HLVT, MethodObj)    // Warning: Unknown method, guessing 0 arguments
     External (LHIH, FieldUnitObj)
     External (LIDS, FieldUnitObj)
     External (LLOW, FieldUnitObj)
@@ -214,7 +212,7 @@ DefinitionBlock ("", "DSDT", 2, "DELL  ", "CBX3   ", 0x01072009)
     Name (TOPM, 0x00000000)
     Name (ROMS, 0xFFE00000)
     Name (VGAF, One)
-    OperationRegion (GNVS, SystemMemory, 0x3953A000, 0x0601)
+    OperationRegion (GNVS, SystemMemory, 0x3800B000, 0x0601)
     Field (GNVS, AnyAcc, Lock, Preserve)
     {
         OSYS,   16, 
@@ -1210,7 +1208,7 @@ DefinitionBlock ("", "DSDT", 2, "DELL  ", "CBX3   ", 0x01072009)
         DWRS,   8
     }
 
-    OperationRegion (DEGA, SystemMemory, 0x39529000, 0x000E)
+    OperationRegion (DEGA, SystemMemory, 0x37FFA000, 0x000E)
     Field (DEGA, AnyAcc, Lock, Preserve)
     {
         DDDR,   8, 
@@ -4204,7 +4202,7 @@ DefinitionBlock ("", "DSDT", 2, "DELL  ", "CBX3   ", 0x01072009)
                     Offset (0x08)
                 }
 
-                OperationRegion (CPSB, SystemMemory, 0x38933F18, 0x10)
+                OperationRegion (CPSB, SystemMemory, 0x37404F18, 0x10)
                 Field (CPSB, AnyAcc, NoLock, Preserve)
                 {
                     RTCX,   1, 
@@ -9463,6 +9461,30 @@ DefinitionBlock ("", "DSDT", 2, "DELL  ", "CBX3   ", 0x01072009)
         Zero, 
         Zero
     })
+    Method (M_OF, 0, NotSerialized)
+    {
+    If (CondRefOf(\_SB_.PCI0.PEG0.PEGP._OFF))
+    {
+          \_SB_.PCI0.PEG0.PEGP._OFF()
+    }
+    If (CondRefOf(\_SB_.PCI0.PEG0.PEGP._PS3))
+    {
+          \_SB_.PCI0.PEG0.PEGP._PS3()
+    
+    }
+    }
+
+    Method (M_ON, 0, NotSerialized)
+    {
+    If (CondRefOf(\_SB_.PCI0.PEG0.PEGP._ON))
+    {
+          \_SB_.PCI0.PEG0.PEGP._ON()
+    }
+    If (CondRefOf(\_SB_.PCI0.PEG0.PEGP._PS0))
+    {
+          \_SB_.PCI0.PEG0.PEGP._PS0()
+    }
+    }
     Method (_PTS, 1, NotSerialized)  // _PTS: Prepare To Sleep
     {
         M_ON ()
@@ -9474,30 +9496,7 @@ DefinitionBlock ("", "DSDT", 2, "DELL  ", "CBX3   ", 0x01072009)
             RPTS (Arg0)
         }
     }
-Method (M_OF, 0, NotSerialized) 
-{
-  If (CondRefOf(\_SB_.PCI0.PEG0.PEGP._OFF)) 
-  {
-      \_SB_.PCI0.PEG0.PEGP._OFF() 
-  }
-  If (CondRefOf(\_SB_.PCI0.PEG0.PEGP._PS3)) 
-  {
-      \_SB_.PCI0.PEG0.PEGP._PS3() 
 
-  }
-}
-
-Method (M_ON, 0, NotSerialized) 
-{
-  If (CondRefOf(\_SB_.PCI0.PEG0.PEGP._ON)) 
-  {
-      \_SB_.PCI0.PEG0.PEGP._ON() 
-  }
-  If (CondRefOf(\_SB_.PCI0.PEG0.PEGP._PS0)) 
-  {
-      \_SB_.PCI0.PEG0.PEGP._PS0() 
-  }
-}
     Method (_WAK, 1, NotSerialized)  // _WAK: Wake
     {
         M_OF ()
@@ -9929,7 +9928,7 @@ Method (M_ON, 0, NotSerialized)
         }
     }
 
-    Name (PNVB, 0x3953BC98)
+    Name (PNVB, 0x3800CC98)
     Name (PNVL, 0x0204)
     If (LEqual (ECR1, One))
     {
@@ -30045,7 +30044,7 @@ Method (M_ON, 0, NotSerialized)
         })
     }
 
-    OperationRegion (ABNV, SystemMemory, 0x39524000, 0x0013)
+    OperationRegion (ABNV, SystemMemory, 0x37FF5000, 0x0013)
     Field (ABNV, AnyAcc, Lock, Preserve)
     {
         ABMA,   64, 
@@ -30650,7 +30649,7 @@ Method (M_ON, 0, NotSerialized)
     Scope (\)
     {
         Mutex (SMIX, 0x01)
-        Name (SMBA, 0x39522000)
+        Name (SMBA, 0x37FF3000)
         Name (PSMI, 0x000000B2)
         Method (SNVC, 1, NotSerialized)
         {
@@ -31719,6 +31718,7 @@ Method (M_ON, 0, NotSerialized)
             {
                 Notify (^^LPCB.PS2K, 0x10)
             }
+
 
             If (And (Arg0, 0x02))
             {
@@ -34014,26 +34014,6 @@ Method (M_ON, 0, NotSerialized)
             Name (_CID, "backlight")
             Name (_UID, 10)
             Name (_STA, 0x0B)
-        }
-    }
-    Device (RMNE)
-    {
-        Name (_ADR, Zero)
-        // The NullEthernet kext matches on this HID
-        Name (_HID, "NULE0000")
-        // This is the MAC address returned by the kext. Modify if necessary.
-        Name (MAC, Buffer() { 0x11, 0x22, 0x33, 0x44, 0x55, 0x66 })
-        Method (_DSM, 4, NotSerialized)
-        {
-            If (LEqual (Arg2, Zero)) { Return (Buffer() { 0x03 } ) }
-            Return (Package()
-            {
-                "built-in", Buffer() { 0x00 },
-                "IOName", "ethernet",
-                "name", Buffer() { "ethernet" },
-                "model", Buffer() { "RM-NullEthernet-1001" },
-                "device_type", Buffer() { "ethernet" },
-            })
         }
     }
 }
