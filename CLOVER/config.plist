@@ -432,13 +432,13 @@
 	<key>SMBIOS</key>
 	<dict>
 		<key>BiosReleaseDate</key>
-		<string>01/18/16</string>
+		<string>09/22/2015</string>
 		<key>BiosVendor</key>
 		<string>Apple Inc.</string>
 		<key>BiosVersion</key>
-		<string>MB91.88Z.0154.B00.1603041656</string>
+		<string>IM171.88Z.0105.B00.1509221819</string>
 		<key>Board-ID</key>
-		<string>Mac-9AE82516C7C6B903</string>
+		<string>Mac-DB15BD556843C820</string>
 		<key>BoardManufacturer</key>
 		<string>Apple Inc.</string>
 		<key>BoardSerialNumber</key>
@@ -448,17 +448,17 @@
 		<key>ChassisManufacturer</key>
 		<string>Apple Inc.</string>
 		<key>ChassisType</key>
-		<string>08</string>
+		<string>13</string>
 		<key>Family</key>
-		<string>MacBook Pro</string>
+		<string>iMac</string>
 		<key>Manufacturer</key>
 		<string>Apple Inc.</string>
 		<key>Mobile</key>
 		<true/>
 		<key>ProductName</key>
-		<string>MacBook9,1</string>
+		<string>iMac17,1</string>
 		<key>SerialNumber</key>
-		<string>C02Q59VNGTHV</string>
+		<string>C02Q59VNGG7L</string>
 		<key>SmUUID</key>
 		<string>44454C4C-3400-1046-805A-B9C04F483732</string>
 		<key>Trust</key>
