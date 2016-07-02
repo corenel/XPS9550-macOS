@@ -157,7 +157,7 @@
 		<key>Audio</key>
 		<dict>
 			<key>Inject</key>
-			<string>3</string>
+			<string>13</string>
 		</dict>
 		<key>USB</key>
 		<dict>
