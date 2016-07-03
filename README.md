@@ -1,12 +1,12 @@
-# OS X El Capitan (10.11.4) on the Dell XPS 15 (9550)
-This repository contains **my own files** on the installation and configuration of OS X El Capitan (10.11.4) on the Dell XPS 15 (9550)
+# OS X El Capitan (10.11.5) on the Dell XPS 15 (9550)
+This repository contains **my own files** on the installation and configuration of OS X El Capitan (10.11.5) on the Dell XPS 15 (9550)
 
 Thanks to the [guide][1] and its participants.
 
 ## Structure
 * `CLOVER`: Clover EFI folder.
-* `DSL`: DSL files for DSDT and SSDT.
-* `Kexts`: Kexts installed in S/L/E.
+* `DSL`: DSL files for patched DSDT and SSDT.
+* `Kexts`: Kexts which should be installed in S/L/E.
 
 ## Tips
 To make external monitor works (since I use `iMac17,1` SMBIOS), you should do following steps:
