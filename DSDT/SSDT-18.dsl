@@ -5,7 +5,7 @@
  * 
  * Disassembling to non-symbolic legacy ASL operators
  *
- * Disassembly of SSDT-18.aml, Sat May 28 15:53:27 2016
+ * Disassembly of SSDT-18.aml, Tue Aug  2 18:30:42 2016
  *
  * Original Table Header:
  *     Signature        "SSDT"
@@ -203,7 +203,11 @@ DefinitionBlock ("", "SSDT", 1, "OptRef", "OptTabl", 0x00001000)
 
         
 
-        
+//        Method (XDSM, 4, Serialized)  // _DSM: Device-Specific Method
+//        {
+//            CreateByteField (Arg0, 0x03, GUID)
+//            Return (\_SB.PCI0.IGPU.HDSM (Arg0, Arg1, Arg2, Arg3))
+//        }
 
         Name (CTXT, Zero)
         Method (_ON, 0, Serialized)  // _ON_: Power On

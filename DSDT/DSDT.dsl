@@ -5,13 +5,13 @@
  * 
  * Disassembling to non-symbolic legacy ASL operators
  *
- * Disassembly of DSDT.aml, Sat May 28 15:53:26 2016
+ * Disassembly of DSDT.aml, Tue Aug  2 18:30:42 2016
  *
  * Original Table Header:
  *     Signature        "DSDT"
  *     Length           0x0002059B (132507)
  *     Revision         0x02
- *     Checksum         0xCC
+ *     Checksum         0x2B
  *     OEM ID           "DELL  "
  *     OEM Table ID     "CBX3   "
  *     OEM Revision     0x01072009 (17244169)
@@ -91,12 +91,12 @@ DefinitionBlock ("", "DSDT", 2, "DELL  ", "CBX3   ", 0x01072009)
     External (_SB_.PCI0.PEG0.HPME, MethodObj)    // 0 Arguments
     External (_SB_.PCI0.PEG0.PEGP.NHDA, FieldUnitObj)
     External (_SB_.PCI0.PEG0.PEGP.SGPO, MethodObj)    // Imported: 2 Arguments
+    External (_SB_.PCI0.PEG0.PEGP._PS3, MethodObj)
+    External (_SB_.PCI0.PEG0.PEGP._PS0, MethodObj)
+    External (_SB_.PCI0.PEG0.PEGP._OFF, MethodObj)
+    External (_SB_.PCI0.PEG0.PEGP._ON, MethodObj)
     External (_SB_.PCI0.PEG1.HPME, MethodObj)    // 0 Arguments
     External (_SB_.PCI0.PEG2.HPME, MethodObj)    // 0 Arguments
-    External(_SB_.PCI0.PEG0.PEGP._PS3, MethodObj)
-    External (_SB_.PCI0.PEG0.PEGP._PS0,MethodObj)
-    External(_SB_.PCI0.PEG0.PEGP._OFF, MethodObj)
-    External(_SB_.PCI0.PEG0.PEGP._ON, MethodObj)
     External (_SB_.PCI0.SAT0.SDSM, MethodObj)    // Imported: 4 Arguments
     External (_SB_.PCI0.SAT0.TFGF, IntObj)
     External (_SB_.PCI0.SAT1.SDSM, MethodObj)    // Imported: 4 Arguments
@@ -212,7 +212,7 @@ DefinitionBlock ("", "DSDT", 2, "DELL  ", "CBX3   ", 0x01072009)
     Name (TOPM, 0x00000000)
     Name (ROMS, 0xFFE00000)
     Name (VGAF, One)
-    OperationRegion (GNVS, SystemMemory, 0x3800B000, 0x0601)
+    OperationRegion (GNVS, SystemMemory, 0x37DBF000, 0x0601)
     Field (GNVS, AnyAcc, Lock, Preserve)
     {
         OSYS,   16, 
@@ -1208,7 +1208,7 @@ DefinitionBlock ("", "DSDT", 2, "DELL  ", "CBX3   ", 0x01072009)
         DWRS,   8
     }
 
-    OperationRegion (DEGA, SystemMemory, 0x37FFA000, 0x000E)
+    OperationRegion (DEGA, SystemMemory, 0x37DAE000, 0x000E)
     Field (DEGA, AnyAcc, Lock, Preserve)
     {
         DDDR,   8, 
@@ -4202,7 +4202,7 @@ DefinitionBlock ("", "DSDT", 2, "DELL  ", "CBX3   ", 0x01072009)
                     Offset (0x08)
                 }
 
-                OperationRegion (CPSB, SystemMemory, 0x37404F18, 0x10)
+                OperationRegion (CPSB, SystemMemory, 0x371B8F18, 0x10)
                 Field (CPSB, AnyAcc, NoLock, Preserve)
                 {
                     RTCX,   1, 
@@ -9461,29 +9461,29 @@ DefinitionBlock ("", "DSDT", 2, "DELL  ", "CBX3   ", 0x01072009)
         Zero, 
         Zero
     })
-    Method (M_OF, 0, NotSerialized)
+    Method (M_OF, 0, NotSerialized) 
     {
-    If (CondRefOf(\_SB_.PCI0.PEG0.PEGP._OFF))
-    {
-          \_SB_.PCI0.PEG0.PEGP._OFF()
-    }
-    If (CondRefOf(\_SB_.PCI0.PEG0.PEGP._PS3))
-    {
-          \_SB_.PCI0.PEG0.PEGP._PS3()
-    
-    }
+      If (CondRefOf(\_SB_.PCI0.PEG0.PEGP._OFF)) 
+      {
+          \_SB_.PCI0.PEG0.PEGP._OFF() 
+      }
+      If (CondRefOf(\_SB_.PCI0.PEG0.PEGP._PS3)) 
+      {
+          \_SB_.PCI0.PEG0.PEGP._PS3() 
+
+      }
     }
 
-    Method (M_ON, 0, NotSerialized)
+    Method (M_ON, 0, NotSerialized) 
     {
-    If (CondRefOf(\_SB_.PCI0.PEG0.PEGP._ON))
-    {
-          \_SB_.PCI0.PEG0.PEGP._ON()
-    }
-    If (CondRefOf(\_SB_.PCI0.PEG0.PEGP._PS0))
-    {
-          \_SB_.PCI0.PEG0.PEGP._PS0()
-    }
+      If (CondRefOf(\_SB_.PCI0.PEG0.PEGP._ON)) 
+      {
+          \_SB_.PCI0.PEG0.PEGP._ON() 
+      }
+      If (CondRefOf(\_SB_.PCI0.PEG0.PEGP._PS0)) 
+      {
+          \_SB_.PCI0.PEG0.PEGP._PS0() 
+      }
     }
     Method (_PTS, 1, NotSerialized)  // _PTS: Prepare To Sleep
     {
@@ -9928,7 +9928,7 @@ DefinitionBlock ("", "DSDT", 2, "DELL  ", "CBX3   ", 0x01072009)
         }
     }
 
-    Name (PNVB, 0x3800CC98)
+    Name (PNVB, 0x37DC0C98)
     Name (PNVL, 0x0204)
     If (LEqual (ECR1, One))
     {
@@ -29630,16 +29630,13 @@ DefinitionBlock ("", "DSDT", 2, "DELL  ", "CBX3   ", 0x01072009)
         {
             Name (_HID, EisaId ("PNP0103"))  // _HID: Hardware ID
             Name (_UID, Zero)  // _UID: Unique ID
-            Name (BUF0, ResourceTemplate()
-{
-    IRQNoFlags() { 0, 8, 11, 15 }
-
+            Name (BUF0, ResourceTemplate ()
+            {
                 Memory32Fixed (ReadWrite,
                     0xFED00000,         // Address Base
                     0x00000400,         // Address Length
                     _Y30)
             })
-
             Method (_STA, 0, NotSerialized)  // _STA: Status
             {
                 If (HPTE)
@@ -29769,7 +29766,8 @@ DefinitionBlock ("", "DSDT", 2, "DELL  ", "CBX3   ", 0x01072009)
                     0x01,               // Alignment
                     0x02,               // Length
                     )
-                
+                IRQNoFlags ()
+                    {2}
             })
         }
 
@@ -29942,7 +29940,8 @@ DefinitionBlock ("", "DSDT", 2, "DELL  ", "CBX3   ", 0x01072009)
                     0x01,               // Alignment
                     0x08,               // Length
                     )
-                
+                IRQNoFlags ()
+                    {8}
             })
         }
 
@@ -29963,7 +29962,8 @@ DefinitionBlock ("", "DSDT", 2, "DELL  ", "CBX3   ", 0x01072009)
                     0x10,               // Alignment
                     0x04,               // Length
                     )
-                
+                IRQNoFlags ()
+                    {0}
             })
         }
 
@@ -30044,7 +30044,7 @@ DefinitionBlock ("", "DSDT", 2, "DELL  ", "CBX3   ", 0x01072009)
         })
     }
 
-    OperationRegion (ABNV, SystemMemory, 0x37FF5000, 0x0013)
+    OperationRegion (ABNV, SystemMemory, 0x37DA9000, 0x0013)
     Field (ABNV, AnyAcc, Lock, Preserve)
     {
         ABMA,   64, 
@@ -30649,7 +30649,7 @@ DefinitionBlock ("", "DSDT", 2, "DELL  ", "CBX3   ", 0x01072009)
     Scope (\)
     {
         Mutex (SMIX, 0x01)
-        Name (SMBA, 0x37FF3000)
+        Name (SMBA, 0x37DA7000)
         Name (PSMI, 0x000000B2)
         Method (SNVC, 1, NotSerialized)
         {
