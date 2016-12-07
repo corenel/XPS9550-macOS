@@ -21,6 +21,7 @@ I use MB9,1 SMBIOS, and has enabled Speed Shift (thanks for goodwin_c).
 **Not working**
 
 * TB3/type-C port stiil can't hot-plug. (Waiting for good news from goodwin_c)
+    * I find that my TB3-DP adapter can hot-plug and the 4K external monitor works fine. Need more test.
 * SD card reader
 
 ## Tips
