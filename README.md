@@ -11,7 +11,14 @@ This repository contains **my own files** on the installation and configuration 
 * `Kexts`: Kexts which should be installed in `S/L/E` or `L/E`.
 
 ## My laptop
-Dell XPS 9550 , CPU: i5-6300HQ/HM170, Nvidia GTX960M / HD530, 1920x1080 (FHD), DDR4 2133 16G (8G x 2), Dell wireless 1830 (BCM43602 + BCM20703A1 ), 512GB NVMe SSD (Samsung SM951), 1TB HDD (WD-Blue)
+Dell XPS 9550
+
+* i5-6300HQ/HM170
+* Nvidia GTX960M / HD530
+* 1920x1080 (FHD)
+* DDR4 2133 16G (8G x 2)
+* Dell wireless 1830 (BCM43602 + BCM20703A1 )
+* 512GB NVMe SSD (Samsung SM951) + 1TB HDD (WD-Blue)
 
 ## Status
 
