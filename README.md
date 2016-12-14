@@ -4,17 +4,18 @@ This repository contains **my own files** on the installation and configuration 
 * Thanks to this [guide][1] and its participants. 
 * Also, thanks darkhandz for [his Sierrra guide](https://github.com/darkhandz/XPS15-9550-Sierra). Please read darkhandz's guide before you use my files.
 * Thanks syscl for HDMI/DP Audio Ouptut. (I haven't test the output)
+* I use [RehabMan's method](http://www.insanelymac.com/forum/topic/312803-patch-for-using-nvme-under-macos-sierra-is-ready/page-29#entry2322636) that allows vanilla `IONVMeFamily.kext` to co-exist with `HackrNVMeFamily*.kext`. Notify that the path of SSD in PCI0 is varied from different devices. Mine is `_SB.PCI0.RP09.PXSX`. Read the tutorial carefully before you use this method.
 
 ## Structure
 * `CLOVER`: Clover EFI folder.
-* `Kexts`: Kexts which should be installed in S/L/E or L/E.
+* `Kexts`: Kexts which should be installed in `S/L/E` or `L/E`.
 
 ## My laptop
 Dell XPS 9550 , CPU: i5-6300HQ/HM170, Nvidia GTX960M / HD530, 1920x1080 (FHD), DDR4 2133 16G (8G x 2), Dell wireless 1830 (BCM43602 + BCM20703A1 ), 512GB NVMe SSD (Samsung SM951), 1TB HDD (WD-Blue)
 
 ## Status
 
-I use MB9,1 SMBIOS, and has enabled Speed Shift (thanks for goodwin_c).
+I use `MB9,1` SMBIOS, and has enabled Speed Shift (thanks for goodwin_c).
 
 **Working**
 
