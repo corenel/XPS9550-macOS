@@ -1,7 +1,9 @@
 # macOS Sierra (10.12.1) on the Dell XPS 15 (9550)
 This repository contains **my own files** on the installation and configuration of macOS Sierra (10.12.1) on the Dell XPS 15 (9550)
 
-Thanks to this [guide][1] and its participants. Also, thanks darkhandz for [his Sierrra guide](https://github.com/darkhandz/XPS15-9550-Sierra). Please read darkhandz's guide before you use my files.
+* Thanks to this [guide][1] and its participants. 
+* Also, thanks darkhandz for [his Sierrra guide](https://github.com/darkhandz/XPS15-9550-Sierra). Please read darkhandz's guide before you use my files.
+* Thanks syscl for HDMI/DP Audio Ouptut. (I haven't test the output)
 
 ## Structure
 * `CLOVER`: Clover EFI folder.
