@@ -4,12 +4,6 @@
 <dict>
 	<key>ACPI</key>
 	<dict>
-		<key>HaltEnabler</key>
-		<false/>
-		<key>ResetAddress</key>	
-		<string>0xB2</string>	
-		<key>ResetValue</key>	
-		<string>0x73</string>
 		<key>#DropTables</key>
 		<array>
 			<dict>
@@ -497,6 +491,8 @@
 				<string>DMAR</string>
 			</dict>
 		</array>
+		<key>HaltEnabler</key>
+		<false/>
 		<key>SSDT</key>
 		<dict>
 			<key>DropOem</key>
