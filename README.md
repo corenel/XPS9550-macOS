@@ -6,6 +6,11 @@ This repository contains **my own files** on the installation and configuration 
 * Thanks syscl for HDMI/DP Audio Ouptut. (I haven't test the output)
 * I use [RehabMan's method](http://www.insanelymac.com/forum/topic/312803-patch-for-using-nvme-under-macos-sierra-is-ready/page-29#entry2322636) that allows vanilla `IONVMeFamily.kext` to co-exist with `HackrNVMeFamily*.kext`. Notify that the path of SSD in PCI0 is varied from different devices. Mine is `_SB.PCI0.RP09.PXSX`. Read the tutorial carefully before you use this method.
 
+> **New branch** - `dev`: Use `MacBookPro13,3` SMBIOS with @syscl's `FakeSMBIOS.kext`.
+>
+> * Note that I can't use ThunberBolt3/Type-C in this config.
+> * The model identifier is still wrong (e.g, `MacBookPro1`) , but that in IOReg is correct.
+> * I hide my serial number as `C02S****H03M`, you may generate it by your own.
 ## Structure
 * `CLOVER`: Clover EFI folder.
 * `Kexts`: Kexts which should be installed in `S/L/E` or `L/E`.
