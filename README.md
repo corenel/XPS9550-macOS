@@ -11,6 +11,7 @@ This repository contains **my own files** on the installation and configuration 
 > * Note that I can't use ThunberBolt3/Type-C in this config.
 > * The model identifier is still wrong (e.g, `MacBookPro1`) , but that in IOReg is correct.
 > * I hide my serial number as `C02S****H03M`, you may generate it by your own.
+
 ## Structure
 * `CLOVER`: Clover EFI folder.
 * `Kexts`: Kexts which should be installed in `S/L/E` or `L/E`.
