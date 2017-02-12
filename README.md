@@ -3,14 +3,12 @@ This repository contains **my own files** on the installation and configuration 
 
 * Thanks to this [guide][1] and its participants.
 * Also, thanks darkhandz for [his Sierrra guide](https://github.com/darkhandz/XPS15-9550-Sierra). Please read darkhandz's guide before you use my files.
-* Thanks syscl for HDMI/DP Audio Ouptut. (I haven't test the output)
+* Thanks @syscl's [guide](http://www.insanelymac.com/forum/topic/319211-guide-fix-skylake-hdmidp-output/) for HDMI/DP Audio Ouptut. (I haven't test the output)
 * I use [RehabMan's method](http://www.insanelymac.com/forum/topic/312803-patch-for-using-nvme-under-macos-sierra-is-ready/page-29#entry2322636) that allows vanilla `IONVMeFamily.kext` to co-exist with `HackrNVMeFamily*.kext`. Notify that the path of SSD in PCI0 is varied from different devices. Mine is `_SB.PCI0.RP09.PXSX`. Read the tutorial carefully before you use this method.
-
-> **New branch** - `dev`: Use `MacBookPro13,3` SMBIOS with @syscl's `FakeSMBIOS.kext`.
->
-> * Note that I can't use ThunberBolt3/Type-C in this config.
-> * The model identifier is still wrong (e.g, `MacBookPro1`) , but that in IOReg is correct.
-> * I hide my serial number as `C02S****H03M`, you may generate it by your own.
+* Use `MacBookPro13,3` SMBIOS, much thanks for @syscl
+  * Note that I can't use ThunberBolt3/Type-C in this config.
+  * The model identifier is also correct now.
+  * I hide my serial number as `C02*****GTFN`, you may generate it by your own.
 
 ## Structure
 * `CLOVER`: Clover EFI folder.
@@ -28,17 +26,18 @@ Dell XPS 9550
 
 ## Status
 
-I use `MB9,1` SMBIOS, and has enabled Speed Shift (thanks for goodwin_c).
+I use `MB13,3` SMBIOS, and has enabled Speed Shift (thanks for goodwin_c).
 
 **Working**
 
-* 97% of the system
+* 98% of the system
 
 **Not working**
 
 * TB3/type-C port stiil can't hot-plug. (Waiting for good news from goodwin_c)
     * I find that my TB3-DP adapter can hot-plug and the 4K external monitor works fine. Need more test.
-* SD card reader
+    * But my Nexus 6P still  can't hot-plug for file tranfering.
+* SD card reader (maybe never)
 
 ## Tips
 
