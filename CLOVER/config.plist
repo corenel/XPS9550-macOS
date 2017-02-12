@@ -469,6 +469,42 @@
 				<key>TableId</key>
 				<string>xh_rvp10</string>
 			</dict>
+			<dict>		 			
+				<key>Signature</key>	
+				<string>SSDT</string>	
+				<key>TableId</key>		 
+				<string>Ther_Rvp</string>
+			</dict>		 				
+			<dict>		 				
+				<key>Signature</key>	
+				<string>SSDT</string>	
+				<key>TableId</key>		 
+				<string>CpuSsdt</string>
+			</dict>		 				
+			<dict>		 				
+				<key>Signature</key>	
+				<string>SSDT</string>	
+				<key>TableId</key>		 
+				<string>Cpu0Ist</string>
+			</dict>		 				
+			<dict>		 				
+				<key>Signature</key>	
+				<string>SSDT</string>	
+				<key>TableId</key>		 
+				<string>ApIst</string>	
+			</dict>		 				
+			<dict>		 				
+				<key>Signature</key>	
+				<string>SSDT</string>	
+				<key>TableId</key>		 
+				<string>Cpu0Cst</string>
+			</dict>		 				
+			<dict>		 				
+				<key>Signature</key>	
+				<string>SSDT</string>	
+				<key>TableId</key>		 
+				<string>ApCst</string>	
+			</dict>
 		</array>
 		<key>HaltEnabler</key>
 		<false/>
@@ -490,7 +526,7 @@
 	<key>Boot</key>
 	<dict>
 		<key>Arguments</key>
-		<string>-v slide=0 dart=0 nv_disable=1 kext-dev-mode=1</string>
+		<string>slide=0 kext-dev-mode=1 dart=0 nv_disable=1 -v</string>
 		<key>DefaultVolume</key>
 		<string>OSX</string>
 		<key>Legacy</key>
@@ -498,7 +534,7 @@
 		<key>Log</key>
 		<false/>
 		<key>NeverHibernate</key>
-		<true/>
+		<false/>
 		<key>Secure</key>
 		<false/>
 		<key>Timeout</key>
@@ -508,10 +544,10 @@
 	</dict>
 	<key>CPU</key>
 	<dict>
-		<key>UseARTFrequency</key>
-		<false/>
 		<key>HWPEnable</key>
 		<true/>
+		<key>UseARTFrequency</key>
+		<false/>
 	</dict>
 	<key>Devices</key>
 	<dict>
@@ -671,6 +707,8 @@
 		<true/>
 		<key>AsusAICPUPM</key>
 		<true/>
+		<key>DellSMBIOSPatch</key>
+		<true/>
 		<key>ForceKextsToLoad</key>
 		<array>
 			<string>\System\Library\Extensions\IONetworkingFamily.kext</string>
@@ -679,22 +717,23 @@
 		<true/>
 		<key>KernelPm</key>
 		<true/>
-		<key>KextsToPatch</key>
+		<key>KernelToPatch</key>
 		<array>
 			<dict>
 				<key>Comment</key>
-				<string>AppleHDA#1</string>
+				<string>MSR 0xE2 _xcpm_idle instant reboot(c) Pike R. Alpha</string>
+				<key>Disabled</key>
+				<false/>
 				<key>Find</key>
-				<data>
-				QcYGAEmLvCQ=
-				</data>
-				<key>Name</key>
-				<string>AppleHDA</string>
+				<data>ILniAAAADzA=</data>
+				<key>MatchOS</key>
+				<string>10.12</string>
 				<key>Replace</key>
-				<data>
-				QcYGAUmLvCQ=
-				</data>
+				<data>ILniAAAAkJA=</data>
 			</dict>
+		</array>
+		<key>KextsToPatch</key>
+		<array>
 			<dict>
 				<key>Comment</key>
 				<string>AppleHDA#2</string>
@@ -739,20 +778,6 @@
 			</dict>
 			<dict>
 				<key>Comment</key>
-				<string>AppleHDA#5</string>
-				<key>Find</key>
-				<data>
-				hAjsEA==
-				</data>
-				<key>Name</key>
-				<string>AppleHDA</string>
-				<key>Replace</key>
-				<data>
-				AAAAAA==
-				</data>
-			</dict>
-			<dict>
-				<key>Comment</key>
 				<string>AppleHDA#6</string>
 				<key>Find</key>
 				<data>
@@ -763,20 +788,6 @@
 				<key>Replace</key>
 				<data>
 				mALsEA==
-				</data>
-			</dict>
-			<dict>
-				<key>Comment</key>
-				<string>AppleHDA#7</string>
-				<key>Find</key>
-				<data>
-				gxnUEQ==
-				</data>
-				<key>Name</key>
-				<string>AppleHDA</string>
-				<key>Replace</key>
-				<data>
-				AAAAAA==
 				</data>
 			</dict>
 			<dict>
@@ -937,17 +948,15 @@
 	<key>SMBIOS</key>
 	<dict>
 		<key>BiosReleaseDate</key>
-		<string>04/19/16</string>
+		<string>12/22/2016</string>
 		<key>BiosVendor</key>
 		<string>Apple Inc.</string>
 		<key>BiosVersion</key>
-		<string>MB91.88Z.0154.B04.1604191425</string>
+		<string>MBP133.88Z.0226.B11.1612220123</string>
 		<key>Board-ID</key>
-		<string>Mac-9AE82516C7C6B903</string>
+		<string>Mac-A5C67F76ED83108C</string>
 		<key>BoardManufacturer</key>
 		<string>Apple Inc.</string>
-		<key>BoardSerialNumber</key>
-		<string>C02140302D5DMT31M</string>
 		<key>BoardType</key>
 		<integer>10</integer>
 		<key>ChassisAssetTag</key>
@@ -955,19 +964,19 @@
 		<key>ChassisManufacturer</key>
 		<string>Apple Inc.</string>
 		<key>ChassisType</key>
-		<string>10</string>
+		<string>0x08</string>
 		<key>Family</key>
-		<string>MacBook</string>
+		<string>MacBook Pro</string>
+		<key>LocationInChassis</key>
+		<string>Part Component</string>
 		<key>Manufacturer</key>
 		<string>Apple Inc.</string>
 		<key>Mobile</key>
 		<true/>
 		<key>ProductName</key>
-		<string>MacBook9,1</string>
+		<string>MacBookPro13,3</string>
 		<key>SerialNumber</key>
-		<string>C02RQ96ZHDNK</string>
-		<key>SmUUID</key>
-		<string>8726103C-B03B-52B9-BAC5-1BC5D60DB4E4</string>
+		<string>C02*****GTFN</string>
 		<key>Trust</key>
 		<false/>
 		<key>Version</key>
