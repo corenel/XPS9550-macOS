@@ -1,12 +1,12 @@
-# macOS Sierra (10.12.2) on the Dell XPS 15 (9550)
-This repository contains **my own files** on the installation and configuration of macOS Sierra (10.12.2) on the Dell XPS 15 (9550)
+# macOS Sierra (10.12.3) on the Dell XPS 15 (9550)
+This repository contains **my own files** on the installation and configuration of macOS Sierra (10.12.3) on the Dell XPS 15 (9550)
 
 * Thanks to this [guide][1] and its participants.
 * Also, thanks darkhandz for [his Sierrra guide](https://github.com/darkhandz/XPS15-9550-Sierra). Please read darkhandz's guide before you use my files.
 * Thanks @syscl's [guide](http://www.insanelymac.com/forum/topic/319211-guide-fix-skylake-hdmidp-output/) for HDMI/DP Audio Ouptut. (I haven't test the output)
 * I use [RehabMan's method](http://www.insanelymac.com/forum/topic/312803-patch-for-using-nvme-under-macos-sierra-is-ready/page-29#entry2322636) that allows vanilla `IONVMeFamily.kext` to co-exist with `HackrNVMeFamily*.kext`. Notify that the path of SSD in PCI0 is varied from different devices. Mine is `_SB.PCI0.RP09.PXSX`. Read the tutorial carefully before you use this method.
 * Use `MacBookPro13,3` SMBIOS, much thanks for @syscl
-  * Note that I can't use ThunberBolt3/Type-C in this config.
+  * Note that you need modify `AppleGraphicsDevicePolicy.kext` to make external monitors work.
   * The model identifier is also correct now.
   * I hide my serial number as `C02*****GTFN`, you may generate it by your own.
 
@@ -26,7 +26,7 @@ Dell XPS 9550
 
 ## Status
 
-I use `MB13,3` SMBIOS, and has enabled Speed Shift (thanks for goodwin_c).
+I use `MB13,3` SMBIOS, and has enabled Speed Shift (thanks for goodwin_c and syscl).
 
 **Working**
 
