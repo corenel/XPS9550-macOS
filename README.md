@@ -1,12 +1,13 @@
-# macOS Sierra (10.12.3) on the Dell XPS 15 (9550)
-This repository contains **my own files** on the installation and configuration of macOS Sierra (10.12.3) on the Dell XPS 15 (9550)
+# macOS Sierra (10.12.5) on the Dell XPS 15 (9550)
+This repository contains **my own files** on the installation and configuration of macOS Sierra (10.12.5) on the Dell XPS 15 (9550)
 
-* Thanks to this [guide][1] and its participants.
+* Thanks to this [guide][1] and its participants. (Original thread is deleted, you can look at [this link](http://www.insanelymac.com/forum/topic/319766-dell-xps-9550-detailled-1011-guide/))
 * Also, thanks darkhandz for [his Sierrra guide](https://github.com/darkhandz/XPS15-9550-Sierra). Please read darkhandz's guide before you use my files.
+* You can also refer to this [guide](https://github.com/wmchris/DellXPS15-9550-OSX/blob/master/Tutorial_10.12.md).
 * Thanks @syscl's [guide](http://www.insanelymac.com/forum/topic/319211-guide-fix-skylake-hdmidp-output/) for HDMI/DP Audio Ouptut. (I haven't test the output)
 * I use [RehabMan's method](http://www.insanelymac.com/forum/topic/312803-patch-for-using-nvme-under-macos-sierra-is-ready/page-29#entry2322636) that allows vanilla `IONVMeFamily.kext` to co-exist with `HackrNVMeFamily*.kext`. Notify that the path of SSD in PCI0 is varied from different devices. Mine is `_SB.PCI0.RP09.PXSX`. Read the tutorial carefully before you use this method.
-* Use `MacBookPro13,3` SMBIOS, much thanks for @syscl
-  * Note that you need modify `AppleGraphicsDevicePolicy.kext` to make external monitors work.
+* Use `MacBookPro13,3` SMBIOS, much thanks for @syscl.
+  * Note that you need to modify `AppleGraphicsDevicePolicy.kext` to make external monitors work.
   * The model identifier is also correct now.
   * I hide my serial number as `C02*****GTFN`, you may generate it by your own.
 
@@ -34,10 +35,10 @@ I use `MB13,3` SMBIOS, and has enabled Speed Shift (thanks for goodwin_c and sys
 
 **Not working**
 
-* TB3/type-C port stiil can't hot-plug. (Waiting for good news from goodwin_c)
+* TB3/type-C port hot-plug maybe work.
     * I find that my TB3-DP adapter can hot-plug and the 4K external monitor works fine. Need more test.
-    * But my Nexus 6P still  can't hot-plug for file tranfering.
-* SD card reader (maybe never)
+    * My Nexus 6P is broken so I can't test.
+* SD card reader (waiting for good news from [this post](http://www.insanelymac.com/forum/topic/321080-sineteks-driver-for-realtek-rtsx-sdhc-card-readers))
 
 ## Tips
 
