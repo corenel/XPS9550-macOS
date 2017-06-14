@@ -85,6 +85,44 @@
 				</dict>
 				<dict>
 					<key>Comment</key>
+					<string>Change H_EC to EC</string>
+					<key>Find</key>
+					<data>
+					SF9FQw==
+					</data>
+					<key>Replace</key>
+					<data>
+					RUNfXw==
+					</data>
+				</dict>
+				<dict>
+					<key>Comment</key>
+					<string>change EC0 to EC</string>
+					<key>Find</key>
+					<data>
+					RUMwXw==
+					</data>
+					<key>Replace</key>
+					<data>
+					RUNfXw==
+					</data>
+				</dict>
+				<dict>
+					<key>Comment</key>
+					<string>change ECDV to EC</string>
+					<key>Disabled</key>
+					<false/>
+					<key>Find</key>
+					<data>
+					RUNEVg==
+					</data>
+					<key>Replace</key>
+					<data>
+					RUNfXw==
+					</data>
+				</dict>
+				<dict>
+					<key>Comment</key>
 					<string>Device AC rename to ADP1  pair with SSDT-ADP1 - credit syscl</string>
 					<key>Find</key>
 					<data>
@@ -471,18 +509,6 @@
 		<array>
 			<dict>
 				<key>Signature</key>
-				<string>SSDT</string>
-				<key>TableId</key>
-				<string>PtidDevc</string>
-			</dict>
-			<dict>
-				<key>Signature</key>
-				<string>SSDT</string>
-				<key>TableId</key>
-				<string>PtidDevc</string>
-			</dict>
-			<dict>
-				<key>Signature</key>
 				<string>#MCFG</string>
 			</dict>
 			<dict>
@@ -583,20 +609,30 @@
 				<key>Device</key>
 				<string>IntelGFX</string>
 				<key>Key</key>
-				<string>AAPL00,PanelPowerUp</string>
+				<string>AAPL,Gfx324</string>
 				<key>Value</key>
 				<data>
-				MAAAAA==
+				AQAAAA==
 				</data>
 			</dict>
 			<dict>
 				<key>Device</key>
 				<string>IntelGFX</string>
 				<key>Key</key>
-				<string>AAPL,Gfx324</string>
+				<string>AAPL,GfxYTile</string>
 				<key>Value</key>
 				<data>
 				AQAAAA==
+				</data>
+			</dict>
+			<dict>
+				<key>Device</key>
+				<string>IntelGFX</string>
+				<key>Key</key>
+				<string>AAPL00,PanelCycleDelay</string>
+				<key>Value</key>
+				<data>
+				+gAAAA==
 				</data>
 			</dict>
 			<dict>
@@ -623,16 +659,6 @@
 				<key>Device</key>
 				<string>IntelGFX</string>
 				<key>Key</key>
-				<string>AAPL00,PanelCycleDelay</string>
-				<key>Value</key>
-				<data>
-				+gAAAA==
-				</data>
-			</dict>
-			<dict>
-				<key>Device</key>
-				<string>IntelGFX</string>
-				<key>Key</key>
 				<string>AAPL00,PanelPowerOn</string>
 				<key>Value</key>
 				<data>
@@ -643,21 +669,29 @@
 				<key>Device</key>
 				<string>IntelGFX</string>
 				<key>Key</key>
-				<string>device-colors</string>
+				<string>AAPL00,PanelPowerUp</string>
 				<key>Value</key>
 				<data>
-				AAIAAKCdnQAAAAAAAAAAAA==
+				MAAAAA==
 				</data>
 			</dict>
 			<dict>
 				<key>Device</key>
 				<string>IntelGFX</string>
 				<key>Key</key>
-				<string>AAPL,GfxYTile</string>
+				<string>graphic-options</string>
 				<key>Value</key>
 				<data>
-				AQAAAA==
+				DAAAAA==
 				</data>
+			</dict>
+			<dict>
+				<key>Device</key>
+				<string>IntelGFX</string>
+				<key>Key</key>
+				<string>hda-gfx</string>
+				<key>Value</key>
+				<string>onboard-1</string>
 			</dict>
 		</array>
 		<key>USB</key>
@@ -766,7 +800,9 @@
 		<array>
 			<dict>
 				<key>Comment</key>
-				<string>AppleHDA#2</string>
+				<string>AppleHDA</string>
+				<key>Disabled</key>
+				<true/>
 				<key>Find</key>
 				<data>
 				QcYGAEiLu2g=
@@ -780,7 +816,9 @@
 			</dict>
 			<dict>
 				<key>Comment</key>
-				<string>AppleHDA#3</string>
+				<string>AppleHDA</string>
+				<key>Disabled</key>
+				<true/>
 				<key>Find</key>
 				<data>
 				QcaGQwEAAAA=
@@ -794,7 +832,9 @@
 			</dict>
 			<dict>
 				<key>Comment</key>
-				<string>AppleHDA#4</string>
+				<string>AppleHDA</string>
+				<key>Disabled</key>
+				<true/>
 				<key>Find</key>
 				<data>
 				hQjsEA==
@@ -808,7 +848,9 @@
 			</dict>
 			<dict>
 				<key>Comment</key>
-				<string>AppleHDA#6</string>
+				<string>AppleHDA</string>
+				<key>Disabled</key>
+				<true/>
 				<key>Find</key>
 				<data>
 				hBnUEQ==
@@ -818,40 +860,6 @@
 				<key>Replace</key>
 				<data>
 				mALsEA==
-				</data>
-			</dict>
-			<dict>
-				<key>Comment</key>
-				<string>Boot graphics glitch, 10.12.dp1 (credit denskop)</string>
-				<key>Find</key>
-				<data>
-				AQAAdSU=
-				</data>
-				<key>MatchOS</key>
-				<string>10.12.x</string>
-				<key>Name</key>
-				<string>IOGraphicsFamily</string>
-				<key>Replace</key>
-				<data>
-				AQAA6yU=
-				</data>
-			</dict>
-			<dict>
-				<key>Comment</key>
-				<string>Skylake minStolenSize patch (credit RehabMan based on original by Austere.J)</string>
-				<key>Disabled</key>
-				<false/>
-				<key>Find</key>
-				<data>
-				iUXIOcZ2UQ==
-				</data>
-				<key>MatchOS</key>
-				<string>10.12.x</string>
-				<key>Name</key>
-				<string>AppleIntelSKLGraphicsFramebuffer</string>
-				<key>Replace</key>
-				<data>
-				iUXIOcZ2UQ==
 				</data>
 			</dict>
 			<dict>
@@ -896,26 +904,10 @@
 				AEFQUExFIFNTRAA=
 				</data>
 				<key>Name</key>
-				<string>IOAHCIBlockStorage</string>
+				<string>com.apple.iokit.IOAHCIBlockStorage</string>
 				<key>Replace</key>
 				<data>
 				AAAAAAAAAAAAAAA=
-				</data>
-			</dict>
-			<dict>
-				<key>Comment</key>
-				<string>Boot graphics glitch, 10.10.x/10.11.x (credit lisai9093, cecekpawon)</string>
-				<key>Find</key>
-				<data>
-				AQAAdRc=
-				</data>
-				<key>MatchOS</key>
-				<string>10.10.x,10.11.x</string>
-				<key>Name</key>
-				<string>IOGraphicsFamily</string>
-				<key>Replace</key>
-				<data>
-				AQAA6xc=
 				</data>
 			</dict>
 			<dict>
@@ -928,7 +920,7 @@
 				AAAIAAIAAACYAAAAAQUJAAAEAAA=
 				</data>
 				<key>Name</key>
-				<string>AppleIntelSKLGraphicsFramebuffer</string>
+				<string>com.apple.driver.AppleIntelSKLGraphicsFramebuffer</string>
 				<key>Replace</key>
 				<data>
 				AAAIAAAEAACYAAAAAQUJAAAEAAA=
@@ -964,6 +956,22 @@
 				<key>Replace</key>
 				<data>
 				VUiJ5THAXcNBVUFUU0iB7DgB
+				</data>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>change F%uT%04x to F%uTxxxx in AppleBacklightInjector.kext (credit RehabMan)</string>
+				<key>Disabled</key>
+				<false/>
+				<key>Find</key>
+				<data>
+				RiV1VCUwNHgA
+				</data>
+				<key>Name</key>
+				<string>com.apple.driver.AppleBacklight</string>
+				<key>Replace</key>
+				<data>
+				RiV1VHh4eHgA
 				</data>
 			</dict>
 		</array>
@@ -1006,7 +1014,7 @@
 		<key>ProductName</key>
 		<string>MacBookPro13,3</string>
 		<key>SerialNumber</key>
-		<string>C02R****GTFN</string>
+		<string>C02RG***GTFN</string>
 		<key>Trust</key>
 		<false/>
 		<key>Version</key>
