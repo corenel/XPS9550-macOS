@@ -23,20 +23,6 @@
 			<array>
 				<dict>
 					<key>Comment</key>
-					<string>Redirect _E42 call to solve recursion issue for USB-C hotplug, pair with SSDT-XE42 - dpassmor</string>
-					<key>Disabled</key>
-					<false/>
-					<key>Find</key>
-					<data>
-					RFBURgFfRTQy
-					</data>
-					<key>Replace</key>
-					<data>
-					RFBURgFYRTQy
-					</data>
-				</dict>
-				<dict>
-					<key>Comment</key>
 					<string>rename HPET to XPET,  pair with SSDT-HPET.aml</string>
 					<key>Find</key>
 					<data>
@@ -89,18 +75,6 @@
 					<key>Find</key>
 					<data>
 					SF9FQw==
-					</data>
-					<key>Replace</key>
-					<data>
-					RUNfXw==
-					</data>
-				</dict>
-				<dict>
-					<key>Comment</key>
-					<string>change EC0 to EC</string>
-					<key>Find</key>
-					<data>
-					RUMwXw==
 					</data>
 					<key>Replace</key>
 					<data>
@@ -598,6 +572,8 @@
 	<dict>
 		<key>HWPEnable</key>
 		<true/>
+		<key>HWPValue</key>
+		<string>0x94002301</string>
 		<key>UseARTFrequency</key>
 		<false/>
 	</dict>
@@ -800,70 +776,6 @@
 		<array>
 			<dict>
 				<key>Comment</key>
-				<string>AppleHDA</string>
-				<key>Disabled</key>
-				<true/>
-				<key>Find</key>
-				<data>
-				QcYGAEiLu2g=
-				</data>
-				<key>Name</key>
-				<string>AppleHDA</string>
-				<key>Replace</key>
-				<data>
-				QcYGAUiLu2g=
-				</data>
-			</dict>
-			<dict>
-				<key>Comment</key>
-				<string>AppleHDA</string>
-				<key>Disabled</key>
-				<true/>
-				<key>Find</key>
-				<data>
-				QcaGQwEAAAA=
-				</data>
-				<key>Name</key>
-				<string>AppleHDA</string>
-				<key>Replace</key>
-				<data>
-				QcaGQwEAAAE=
-				</data>
-			</dict>
-			<dict>
-				<key>Comment</key>
-				<string>AppleHDA</string>
-				<key>Disabled</key>
-				<true/>
-				<key>Find</key>
-				<data>
-				hQjsEA==
-				</data>
-				<key>Name</key>
-				<string>AppleHDA</string>
-				<key>Replace</key>
-				<data>
-				AAAAAA==
-				</data>
-			</dict>
-			<dict>
-				<key>Comment</key>
-				<string>AppleHDA</string>
-				<key>Disabled</key>
-				<true/>
-				<key>Find</key>
-				<data>
-				hBnUEQ==
-				</data>
-				<key>Name</key>
-				<string>AppleHDA</string>
-				<key>Replace</key>
-				<data>
-				mALsEA==
-				</data>
-			</dict>
-			<dict>
-				<key>Comment</key>
 				<string>AirPortBrcm4360 - fcvo, 10.12.x (credit the-darkvoid)</string>
 				<key>Find</key>
 				<data>
@@ -876,6 +788,22 @@
 				<key>Replace</key>
 				<data>
 				gflSqgAAZpA=
+				</data>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>AirPortBrcm4360 5Ghz</string>
+				<key>Find</key>
+				<data>
+				QYP8/3QsSA==
+				</data>
+				<key>MatchOS</key>
+				<string>10.11.x,10.12.x</string>
+				<key>Name</key>
+				<string>AirPortBrcm4360</string>
+				<key>Replace</key>
+				<data>
+				ZscGI2HrKw==
 				</data>
 			</dict>
 			<dict>
@@ -1014,7 +942,7 @@
 		<key>ProductName</key>
 		<string>MacBookPro13,3</string>
 		<key>SerialNumber</key>
-		<string>C02RG***GTFN</string>
+		<string>C02R****GTFN</string>
 		<key>Trust</key>
 		<false/>
 		<key>Version</key>
