@@ -496,40 +496,16 @@
 				<string>xh_rvp10</string>
 			</dict>
 			<dict>
+				<key>Comment</key>
+				<string>http://www.insanelymac.com/forum/topic/324194-pre-release-macos-high-sierra/page-38#entry2441580</string>
 				<key>Signature</key>
-				<string>SSDT</string>
-				<key>TableId</key>
-				<string>Ther_Rvp</string>
+				<string>MATS</string>
 			</dict>
 			<dict>
+				<key>Comment</key>
+				<string>the reason same as MATS</string>
 				<key>Signature</key>
-				<string>SSDT</string>
-				<key>TableId</key>
-				<string>CpuSsdt</string>
-			</dict>
-			<dict>
-				<key>Signature</key>
-				<string>SSDT</string>
-				<key>TableId</key>
-				<string>Cpu0Ist</string>
-			</dict>
-			<dict>
-				<key>Signature</key>
-				<string>SSDT</string>
-				<key>TableId</key>
-				<string>ApIst</string>
-			</dict>
-			<dict>
-				<key>Signature</key>
-				<string>SSDT</string>
-				<key>TableId</key>
-				<string>Cpu0Cst</string>
-			</dict>
-			<dict>
-				<key>Signature</key>
-				<string>SSDT</string>
-				<key>TableId</key>
-				<string>ApCst</string>
+				<string>BGRT</string>
 			</dict>
 		</array>
 		<key>HaltEnabler</key>
@@ -552,7 +528,7 @@
 	<key>Boot</key>
 	<dict>
 		<key>Arguments</key>
-		<string>slide=0 kext-dev-mode=1 dart=0 nv_disable=1 -v</string>
+		<string>slide=168 kext-dev-mode=1 dart=0 nv_disable=1 -v</string>
 		<key>DefaultVolume</key>
 		<string>OSX</string>
 		<key>Legacy</key>
@@ -765,7 +741,7 @@
 				ILniAAAADzA=
 				</data>
 				<key>MatchOS</key>
-				<string>10.12</string>
+				<string>10.12.x,10.13.x</string>
 				<key>Replace</key>
 				<data>
 				ILniAAAAkJA=
@@ -914,11 +890,11 @@
 	<key>SMBIOS</key>
 	<dict>
 		<key>BiosReleaseDate</key>
-		<string>12/22/2016</string>
+		<string>04/29/2017</string>
 		<key>BiosVendor</key>
 		<string>Apple Inc.</string>
 		<key>BiosVersion</key>
-		<string>MBP133.88Z.0226.B11.1612220123</string>
+		<string>MBP133.88Z.0226.B24.1704292117</string>
 		<key>Board-ID</key>
 		<string>Mac-A5C67F76ED83108C</string>
 		<key>BoardManufacturer</key>
