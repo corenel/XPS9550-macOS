@@ -1,5 +1,5 @@
-# macOS Sierra (10.12.5) on the Dell XPS 15 (9550)
-This repository contains **my own files** on the installation and configuration of macOS Sierra (10.12.5) on the Dell XPS 15 (9550)
+# macOS Sierra (10.12.6) on the Dell XPS 15 (9550)
+This repository contains **my own files** on the installation and configuration of macOS Sierra (10.12.6) on the Dell XPS 15 (9550)
 
 * Thanks to this [guide][1] and its participants. (Original thread is deleted, you can look at [this link](http://www.insanelymac.com/forum/topic/319766-dell-xps-9550-detailled-1011-guide/))
 * Also, thanks darkhandz for [his Sierrra guide](https://github.com/darkhandz/XPS15-9550-Sierra). Please read darkhandz's guide before you use my files.
