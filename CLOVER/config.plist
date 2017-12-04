@@ -14,6 +14,8 @@
 				<true/>
 				<key>FixHPET_0010</key>
 				<false/>
+				<key>FixHeaders_20000000</key>
+				<true/>
 				<key>FixIPIC_0040</key>
 				<true/>
 				<key>NewWay_80000000</key>
@@ -129,30 +131,6 @@
 					<key>Replace</key>
 					<data>
 					U0xQQg==
-					</data>
-				</dict>
-				<dict>
-					<key>Comment</key>
-					<string>Device ALSD rename to ALS0 - credit syscl</string>
-					<key>Find</key>
-					<data>
-					QUxTRAhfSEk=
-					</data>
-					<key>Replace</key>
-					<data>
-					QUxTMAhfSEk=
-					</data>
-				</dict>
-				<dict>
-					<key>Comment</key>
-					<string>Rename Method GPRW,02 to Method XPRW,02 and need add-on  SSDT-PRW.aml</string>
-					<key>Find</key>
-					<data>
-					R1BSVwJwaA==
-					</data>
-					<key>Replace</key>
-					<data>
-					WFBSVwJwaA==
 					</data>
 				</dict>
 				<dict>
@@ -353,7 +331,7 @@
 				</dict>
 				<dict>
 					<key>Comment</key>
-					<string>change Method(GPRW,2,N) to XPRW, pair with SSDT-PRW.aml</string>
+					<string>change Method(GPRW,2,N) to XPRW, pair with SSDT-GPRW.aml</string>
 					<key>Disabled</key>
 					<false/>
 					<key>Find</key>
@@ -367,7 +345,7 @@
 				</dict>
 				<dict>
 					<key>Comment</key>
-					<string>change Method(UPRW,2,..) to Method(XPRW,2,..), pair with SSDT-PRW.aml</string>
+					<string>change Method(UPRW,2,N) to XPRW, pair with SSDT-UPRW.aml</string>
 					<key>Disabled</key>
 					<false/>
 					<key>Find</key>
@@ -477,20 +455,6 @@
 					WwFFQ0FYAA==
 					</data>
 				</dict>
-				<dict>
-					<key>Comment</key>
-					<string>Redirect _E42 call to solve recursion issue for USB-C hotplug, pair with SSDT-XE42 - dpassmor</string>
-					<key>Disabled</key>
-					<false/>
-					<key>Find</key>
-					<data>
-					RFBURgFfRTQy
-					</data>
-					<key>Replace</key>
-					<data>
-					RFBURgFYRTQy
-					</data>
-				</dict>
 			</array>
 		</dict>
 		<key>DropTables</key>
@@ -508,18 +472,6 @@
 				<string>SSDT</string>
 				<key>TableId</key>
 				<string>xh_rvp10</string>
-			</dict>
-			<dict>
-				<key>Comment</key>
-				<string>http://www.insanelymac.com/forum/topic/324194-pre-release-macos-high-sierra/page-38#entry2441580</string>
-				<key>Signature</key>
-				<string>MATS</string>
-			</dict>
-			<dict>
-				<key>Comment</key>
-				<string>the reason same as MATS</string>
-				<key>Signature</key>
-				<string>BGRT</string>
 			</dict>
 		</array>
 		<key>HaltEnabler</key>
@@ -542,122 +494,64 @@
 	<key>Boot</key>
 	<dict>
 		<key>Arguments</key>
-		<string>slide=168 kext-dev-mode=1 dart=0 nv_disable=1 -v</string>
+		<string>kext-dev-mode=1 dart=0 nv_disable=1 brcmfx-country=#a abm_firstpolldelay=16000 -v</string>
 		<key>DefaultVolume</key>
 		<string>OSX</string>
-		<key>Legacy</key>
-		<string>LegacyBiosDefault</string>
 		<key>Log</key>
 		<false/>
 		<key>NeverHibernate</key>
-		<false/>
+		<true/>
 		<key>Secure</key>
 		<false/>
 		<key>Timeout</key>
-		<integer>5</integer>
+		<integer>2</integer>
 		<key>XMPDetection</key>
-		<string>Yes</string>
+		<false/>
 	</dict>
 	<key>CPU</key>
 	<dict>
 		<key>HWPEnable</key>
 		<true/>
-		<key>HWPValue</key>
-		<string>0x94002301</string>
 		<key>UseARTFrequency</key>
-		<false/>
+		<true/>
 	</dict>
 	<key>Devices</key>
 	<dict>
 		<key>AddProperties</key>
 		<array>
 			<dict>
+				<key>Comment</key>
+				<string>Inject "name" as (data)"#display" to disable graphics drivers on NVidia</string>
 				<key>Device</key>
-				<string>IntelGFX</string>
+				<string>NVidia</string>
 				<key>Key</key>
-				<string>AAPL,Gfx324</string>
+				<string>name</string>
 				<key>Value</key>
 				<data>
-				AQAAAA==
+				I2Rpc3BsYXkA
 				</data>
 			</dict>
 			<dict>
+				<key>Comment</key>
+				<string>Inject "IOName" as "#display" to disable graphics drivers on NVidia</string>
 				<key>Device</key>
-				<string>IntelGFX</string>
+				<string>NVidia</string>
 				<key>Key</key>
-				<string>AAPL,GfxYTile</string>
+				<string>IOName</string>
 				<key>Value</key>
-				<data>
-				AQAAAA==
-				</data>
+				<string>#display</string>
 			</dict>
 			<dict>
+				<key>Comment</key>
+				<string>Inject bogus class-code to prevent graphics drivers loading for NVidia</string>
 				<key>Device</key>
-				<string>IntelGFX</string>
+				<string>NVidia</string>
 				<key>Key</key>
-				<string>AAPL00,PanelCycleDelay</string>
+				<string>class-code</string>
 				<key>Value</key>
 				<data>
-				+gAAAA==
+				/////w==
 				</data>
-			</dict>
-			<dict>
-				<key>Device</key>
-				<string>IntelGFX</string>
-				<key>Key</key>
-				<string>AAPL00,PanelPowerDown</string>
-				<key>Value</key>
-				<data>
-				PAAAAA==
-				</data>
-			</dict>
-			<dict>
-				<key>Device</key>
-				<string>IntelGFX</string>
-				<key>Key</key>
-				<string>AAPL00,PanelPowerOff</string>
-				<key>Value</key>
-				<data>
-				EQAAAA==
-				</data>
-			</dict>
-			<dict>
-				<key>Device</key>
-				<string>IntelGFX</string>
-				<key>Key</key>
-				<string>AAPL00,PanelPowerOn</string>
-				<key>Value</key>
-				<data>
-				GQEAAA==
-				</data>
-			</dict>
-			<dict>
-				<key>Device</key>
-				<string>IntelGFX</string>
-				<key>Key</key>
-				<string>AAPL00,PanelPowerUp</string>
-				<key>Value</key>
-				<data>
-				MAAAAA==
-				</data>
-			</dict>
-			<dict>
-				<key>Device</key>
-				<string>IntelGFX</string>
-				<key>Key</key>
-				<string>graphic-options</string>
-				<key>Value</key>
-				<data>
-				DAAAAA==
-				</data>
-			</dict>
-			<dict>
-				<key>Device</key>
-				<string>IntelGFX</string>
-				<key>Key</key>
-				<string>hda-gfx</string>
-				<key>Value</key>
-				<string>onboard-1</string>
 			</dict>
 		</array>
 		<key>USB</key>
@@ -683,15 +577,17 @@
 			<key>Entries</key>
 			<array>
 				<dict>
-					<key>FullTitle</key>
-					<string>UEFI internal</string>
 					<key>Hidden</key>
-					<string>Always</string>
+					<false/>
 					<key>Type</key>
-					<string>Other</string>
+					<string>OSXRecovery</string>
 				</dict>
 			</array>
 		</dict>
+		<key>Hide</key>
+		<array>
+			<string>Preboot</string>
+		</array>
 		<key>Language</key>
 		<string>zh_CN:0</string>
 		<key>Mouse</key>
@@ -704,7 +600,7 @@
 			<key>Entries</key>
 			<true/>
 			<key>Legacy</key>
-			<true/>
+			<false/>
 			<key>Tool</key>
 			<true/>
 		</dict>
@@ -720,7 +616,7 @@
 			<key>Intel</key>
 			<true/>
 			<key>NVidia</key>
-			<false/>
+			<true/>
 		</dict>
 		<key>InjectEDID</key>
 		<false/>
@@ -754,8 +650,6 @@
 				<data>
 				ILniAAAADzA=
 				</data>
-				<key>MatchOS</key>
-				<string>10.12.x,10.13.x</string>
 				<key>Replace</key>
 				<data>
 				ILniAAAAkJA=
@@ -766,57 +660,23 @@
 		<array>
 			<dict>
 				<key>Comment</key>
-				<string>AirPortBrcm4360 - fcvo, 10.12.x (credit the-darkvoid)</string>
-				<key>Find</key>
-				<data>
-				gflSqgAAdSk=
-				</data>
+				<string>Boot graphics glitch, 10.13 beta (based on denskop patch)</string>
 				<key>MatchOS</key>
-				<string>10.12.x</string>
+				<string>10.13.x</string>
+				<key>Disabled</key>
+				<false/>
 				<key>Name</key>
-				<string>AirPortBrcm4360</string>
-				<key>Replace</key>
-				<data>
-				gflSqgAAZpA=
-				</data>
-			</dict>
-			<dict>
-				<key>Comment</key>
-				<string>AirPortBrcm4360 5Ghz</string>
+				<string>com.apple.iokit.IOGraphicsFamily</string>
 				<key>Find</key>
-				<data>
-				QYP8/3QsSA==
-				</data>
-				<key>MatchOS</key>
-				<string>10.11.x,10.12.x</string>
-				<key>Name</key>
-				<string>AirPortBrcm4360</string>
+				<data>AQAAdSI=</data>
 				<key>Replace</key>
-				<data>
-				ZscGI2HrKw==
-				</data>
-			</dict>
-			<dict>
-				<key>Comment</key>
-				<string>10.11.dp1+ BT4LE-Handoff-Hotspot, credit RehabMan based on Dokterdok original</string>
-				<key>Find</key>
-				<data>
-				SIX/dEdIiwc=
-				</data>
-				<key>MatchOS</key>
-				<string>10.11.x,10.12.x</string>
-				<key>Name</key>
-				<string>IOBluetoothFamily</string>
-				<key>Replace</key>
-				<data>
-				Qb4PAAAA60Q=
-				</data>
+				<data>AQAA6yI=</data>
 			</dict>
 			<dict>
 				<key>Comment</key>
 				<string>Enable TRIM for SSD</string>
 				<key>Disabled</key>
-				<false/>
+				<true/>
 				<key>Find</key>
 				<data>
 				AEFQUExFIFNTRAA=
@@ -904,37 +764,45 @@
 	<key>SMBIOS</key>
 	<dict>
 		<key>BiosReleaseDate</key>
-		<string>04/29/2017</string>
+		<string>08/08/2017</string>
 		<key>BiosVendor</key>
 		<string>Apple Inc.</string>
 		<key>BiosVersion</key>
-		<string>MBP133.88Z.0226.B24.1704292117</string>
+		<string>MBP133.88Z.0233.B00.1708080034</string>
 		<key>Board-ID</key>
 		<string>Mac-A5C67F76ED83108C</string>
 		<key>BoardManufacturer</key>
 		<string>Apple Inc.</string>
 		<key>BoardType</key>
 		<integer>10</integer>
+		<key>BoardVersion</key>
+		<string>MacBookPro13,3</string>
 		<key>ChassisAssetTag</key>
 		<string>MacBook-Aluminum</string>
 		<key>ChassisManufacturer</key>
 		<string>Apple Inc.</string>
 		<key>ChassisType</key>
-		<string>0x08</string>
+		<string>0x09</string>
 		<key>Family</key>
 		<string>MacBook Pro</string>
+		<key>FirmwareFeatures</key>
+		<string>0xFC0FE13E</string>
+		<key>FirmwareFeaturesMask</key>
+		<string>0xFF1FFF3F</string>
 		<key>LocationInChassis</key>
 		<string>Part Component</string>
 		<key>Manufacturer</key>
 		<string>Apple Inc.</string>
 		<key>Mobile</key>
 		<true/>
+		<key>PlatformFeature</key>
+		<string>0x1A</string>
 		<key>ProductName</key>
 		<string>MacBookPro13,3</string>
 		<key>SerialNumber</key>
-		<string>C02R****GTFN</string>
+		<string>C02Q****H2YQ</string>
 		<key>Trust</key>
-		<false/>
+		<true/>
 		<key>Version</key>
 		<string>1.0</string>
 	</dict>
