@@ -1,5 +1,5 @@
-# macOS High Sierra (10.13.1) on the Dell XPS 15 (9550)
-This repository contains **my own files** on the installation and configuration of macOS High Sierra (10.13.1) on the Dell XPS 15 (9550)
+# macOS High Sierra (10.13.2) on the Dell XPS 15 (9550)
+This repository contains **my own files** on the installation and configuration of macOS High Sierra (10.13.2) on the Dell XPS 15 (9550)
 
 * Thanks darkhandz for [his High Sierrra guide](https://github.com/darkhandz/XPS15-9550-High-Sierra). Please read darkhandz's guide before you use my files.
 * Use `MacBookPro13,3` SMBIOS, much thanks for @syscl.
