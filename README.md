@@ -32,7 +32,7 @@ This repository contains **my own files** on the installation and configuration 
 
 * TB3/type-C port hot-plug maybe work.
     * I find that my TB3-DP adapter can hot-plug and the 4K external monitor works fine. Need more test.
-    * Third-party tests say that DP hot-pluggin is also functioning fine.
+    * Third-party tests say that DP hot-plugging is also functioning fine.
     * My Nexus 6P is broken so I can't test.
 * SD card reader (waiting for good news from [this post](http://www.insanelymac.com/forum/topic/321080-sineteks-driver-for-realtek-rtsx-sdhc-card-readers))
 
