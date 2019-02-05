@@ -1,13 +1,13 @@
 # macOS Mojave (10.4.3) on the Dell XPS 15 (9550)
-This repository contains **my own files** on the installation and configuration of macOS High Sierra (10.13.5) on the Dell XPS 15 (9550)
+This repository contains **my own files** on the installation and configuration of macOS Mojave (10.14.3) on the Dell XPS 15 (9550)
 
-* Thanks darkhandz for [his High Sierrra guide](https://github.com/darkhandz/XPS15-9550-High-Sierra). Please read darkhandz's guide before you use my files.
-* Thanks wmchris for [his guide](https://github.com/wmchris/DellXPS15-9550-OSX).
+* Thanks darkhandz for [his High Sierrra guide](https://github.com/darkhandz/XPS15-9550-High-Sierra) and wmchris for [his guide](https://github.com/wmchris/DellXPS15-9550-OSX). Please read these two guides before you use my files.
 * Use `MacBookPro13,3` SMBIOS, much thanks for @syscl.
   * Note that you need to modify `AppleGraphicsDevicePolicy.kext` to make external monitors work.
   * The model identifier is also correct now.
   * I hide my serial number as `C02*****GTFN`, you may generate it by your own.
 * `Caps` and `Left-Ctrl` is exchanged in `VoodoooPS2`, you can modify it if you don't like this keyboard layout.
+* `OsxAptioFix2Drv-free2000.efi` is used to fix the slide parameter in booting, you may try `OsxAptioFix2Drv-64.efi` or `OsxAptioFix3Drv-64.efi ` instead for your laptop.
 
 ## Structure
 * `CLOVER`: Clover EFI folder.
