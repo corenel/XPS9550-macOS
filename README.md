@@ -1,5 +1,5 @@
-# macOS Mojave (10.4.3) on the Dell XPS 15 (9550)
-This repository contains **my own files** on the installation and configuration of macOS Mojave (10.14.3) on the Dell XPS 15 (9550)
+# macOS Mojave (10.4.6) on the Dell XPS 15 (9550)
+This repository contains **my own files** on the installation and configuration of macOS Mojave (10.14.6) on the Dell XPS 15 (9550)
 
 * Thanks darkhandz for [his High Sierrra guide](https://github.com/darkhandz/XPS15-9550-High-Sierra) and wmchris for [his guide](https://github.com/wmchris/DellXPS15-9550-OSX). Please read these two guides before you use my files.
 * Use `MacBookPro13,3` SMBIOS, much thanks for @syscl.
@@ -16,13 +16,13 @@ This repository contains **my own files** on the installation and configuration 
 ## My laptop
 **Dell XPS 9550**
 
-* i5-6300HQ/HM170
-* Nvidia GTX960M / HD530
-* 3840x2160 (QHD)
-* DDR4 2133 16G (8G x 2)
-* Dell wireless 1830 (BCM43602 + BCM20703A1 )
-* 512GB NVMe SSD (Samsung SM951)
-* BIOS Firmware 1.9.0
+- i5-6300HQ/HM170
+- Nvidia GTX960M / HD530
+- 3840x2160 (QHD)
+- DDR4 2133 16G (8G x 2)
+- Dell Wireless 1830 (BCM43602 + BCM20703A1)
+- 512GB NVMe SSD (Samsung SM951)
+- BIOS Firmware 1.9.0
 
 ## Status
 
