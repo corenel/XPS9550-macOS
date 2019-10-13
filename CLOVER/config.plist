@@ -462,6 +462,12 @@
 					<key>Type</key>
 					<string>Other</string>
 				</dict>
+				<dict>
+					<key>Hidden</key>
+					<true/>
+					<key>Type</key>
+					<string>OSXRecovery</string>
+				</dict>
 			</array>
 		</dict>
 		<key>Hide</key>

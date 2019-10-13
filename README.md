@@ -1,5 +1,5 @@
-# macOS Mojave (10.4.6) on the Dell XPS 15 (9550)
-This repository contains **my own files** on the installation and configuration of macOS Mojave (10.14.6) on the Dell XPS 15 (9550)
+# macOS Catalina (10.15) on the Dell XPS 15 (9550)
+This repository contains **my own files** on the installation and configuration of macOS Catalina (10.15) on the Dell XPS 15 (9550)
 
 * Thanks darkhandz for [his High Sierrra guide](https://github.com/darkhandz/XPS15-9550-High-Sierra) and wmchris for [his guide](https://github.com/wmchris/DellXPS15-9550-OSX). Please read these two guides before you use my files.
 * Use `MacBookPro13,3` SMBIOS, much thanks for @syscl.
