@@ -1,4 +1,7 @@
 # macOS Catalina (10.15.1) on the Dell XPS 15 (9550)
+
+> This repo is no longer maintained, since I have switched from XPS to a real MacBook Pro.
+
 This repository contains **my own files** on the installation and configuration of macOS Catalina (10.15.1) on the Dell XPS 15 (9550)
 
 * Thanks darkhandz for [his High Sierrra guide](https://github.com/darkhandz/XPS15-9550-High-Sierra) and wmchris for [his guide](https://github.com/wmchris/DellXPS15-9550-OSX). Please read these two guides before you use my files.
